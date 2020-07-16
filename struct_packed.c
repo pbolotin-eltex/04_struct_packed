@@ -42,18 +42,28 @@ int main() {
     
     /*Difference in size!*/
     printf("sizeof(Alpha) = %lu\n", sizeof(Alpha));
-    printf("sizeof(Beta) = %lu\n", sizeof(Beta));  
+    printf("sizeof(Beta)  = %lu\n", sizeof(Beta));  
+    printf("\n");
     
-    /*Difference in actual memory*/
+    /*Difference in actual memory, bytes and its address*/
     int i;
+    printf("Alpha bytes and its addresses:\n");
     for(i = 0; i < sizeof(Alpha); i++) {
-        printf("%#2x ", ((unsigned char*)&a)[i]);
+        printf("%#2x\t%p\n", ((unsigned char*)&a)[i], &(((unsigned char*)&a)[i]));
     }
     printf("\n");
+    printf("Beta  bytes and its addresses:\n");
     for(i = 0; i < sizeof(Beta); i++) {
-        printf("%#2x ", ((unsigned char*)&b)[i]);
+        printf("%#2x\t%p\n", ((unsigned char*)&b)[i], &(((unsigned char*)&b)[i]));
     }
     printf("\n");
+    
+    /*Addresses of fields:*/
+    printf("Alpha a.byte:  %p\n", &a.byte);
+    printf("Alpha a.value: %p\n", &a.value);
+    printf("\n");
+    printf("Beta  b.byte:  %p\n", &b.byte);
+    printf("Beta  b.value: %p\n", &b.value);
     
     return 0;
 }
