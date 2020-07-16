@@ -1,0 +1,3 @@
+This project has aim to show
+memory organization of C struct,
+with and without padding.
